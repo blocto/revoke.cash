@@ -2,6 +2,7 @@ import Href from 'components/common/Href';
 import WalletIndicator from 'components/header/WalletIndicator';
 import useTranslation from 'next-translate/useTranslation';
 import Image from 'next/image';
+import { Address } from 'viem';
 import DonateButton from '../common/DonateButton';
 import MobileMenu from './MobileMenu';
 import MoreDropdown from './MoreDropdown';
@@ -9,10 +10,11 @@ import NavLink from './NavLink';
 import SearchBar from './SearchBar';
 
 interface Props {
+  pageAddress?: Address;
   searchBar?: boolean;
 }
 
-const Header = ({ searchBar = true }: Props) => {
+const Header = ({ pageAddress, searchBar = true }: Props) => {
   const { t } = useTranslation();
 
   return (
@@ -38,7 +40,7 @@ const Header = ({ searchBar = true }: Props) => {
           </Href>
         </div>
         <div className="hidden lg:flex justify-end w-2/5 gap-2">
-          <WalletIndicator />
+          <WalletIndicator pageAddress={pageAddress} />
         </div>
         <div className="flex lg:hidden justify-end">
           <MobileMenu />

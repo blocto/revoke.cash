@@ -11,7 +11,7 @@ interface Props {
 // TODO: This will become better when we switch to Next.js App Directory (nested layouts)
 const AddressPageLayout = ({ children, address }: Props) => {
   return (
-    <PublicLayout>
+    <PublicLayout pageAddress={address}>
       <AddressPageContextProvider address={address}>
         <AddressHeader />
         {children}

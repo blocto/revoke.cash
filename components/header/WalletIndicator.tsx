@@ -1,19 +1,30 @@
 import { useMounted } from 'lib/hooks/useMounted';
+import { useRouter } from 'next/router';
+import { Address } from 'viem';
 import { useAccount, useNetwork, useSwitchNetwork } from 'wagmi';
 import ChainSelect from '../common/ChainSelect';
 import WalletIndicatorDropdown from './WalletIndicatorDropdown';
 
 interface Props {
+  pageAddress?: Address;
   menuAlign?: 'left' | 'right';
   size?: 'sm' | 'md' | 'lg' | 'none';
   style?: 'primary' | 'secondary' | 'tertiary' | 'none';
   className?: string;
 }
 
-const WalletIndicator = ({ menuAlign, size, style, className }: Props) => {
+const WalletIndicator = ({ menuAlign, size, style, className, pageAddress }: Props) => {
+  const router = useRouter();
   const isMounted = useMounted();
   const { address: account } = useAccount();
-  const { switchNetwork } = useSwitchNetwork();
+  const { switchNetwork } = useSwitchNetwork({
+    onSuccess: () => {
+      if (account && pageAddress && account != pageAddress) {
+        router.push(`/address/${account}`);
+      }
+    },
+  });
+
   const { chain } = useNetwork();
 
   if (!isMounted) return null;
