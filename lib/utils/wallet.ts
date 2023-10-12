@@ -15,6 +15,7 @@ export const getWalletIcon = (walletName: string): string | undefined => {
     bitkeep: '/assets/images/vendor/wallets/bitkeep.svg',
     bitski: `${BASE_URL}/bitskiWallet/bitskiWallet.svg`,
     blockwallet: '/assets/images/vendor/wallets/block-wallet.jpg',
+    blocto: '/assets/images/vendor/wallets/blocto.png',
     'brave wallet': `${BASE_URL}/braveWallet/braveWallet.svg`,
     'core wallet': '/assets/images/vendor/wallets/core-wallet.svg',
     'dawn wallet': `${BASE_URL}/dawnWallet/dawnWallet.svg`,

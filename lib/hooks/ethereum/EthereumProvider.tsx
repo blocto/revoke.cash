@@ -1,3 +1,4 @@
+import { BloctoConnector } from '@blocto/wagmi-connector';
 import { getViemChainConfig, SUPPORTED_CHAINS } from 'lib/utils/chains';
 import { SECOND } from 'lib/utils/time';
 import { ReactNode, useEffect } from 'react';
@@ -50,6 +51,7 @@ export const connectors = [
     },
   }),
   new CoinbaseWalletConnector({ chains: wagmiChains, options: { appName: 'Revoke.cash' } }),
+  new BloctoConnector({ chains: wagmiChains }),
   new LedgerConnector({
     chains: wagmiChains,
     options: { walletConnectVersion: 2, projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID },
