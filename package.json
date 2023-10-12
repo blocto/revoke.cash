@@ -37,7 +37,7 @@
     "dexie": "^3.2.4",
     "iron-session": "^6.3.1",
     "mixpanel-browser": "^2.47.0",
-    "next": "13.5.3",
+    "next": "13.4.9",
     "next-seo": "^6.1.0",
     "next-translate": "^2.6.0",
     "nprogress": "^0.2.0",
