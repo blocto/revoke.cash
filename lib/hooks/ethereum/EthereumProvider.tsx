@@ -3,11 +3,7 @@ import { getViemChainConfig, SUPPORTED_CHAINS } from 'lib/utils/chains';
 import { SECOND } from 'lib/utils/time';
 import { ReactNode, useEffect } from 'react';
 import { configureChains, createConfig, useAccount, useConnect, WagmiConfig } from 'wagmi';
-import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet';
 import { InjectedConnector } from 'wagmi/connectors/injected';
-import { LedgerConnector } from 'wagmi/connectors/ledger';
-import { SafeConnector } from 'wagmi/connectors/safe';
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { publicProvider } from 'wagmi/providers/public';
 
 interface Props {
@@ -28,34 +24,8 @@ class InjectedConnectorNoDisconnectListener extends InjectedConnector {
 }
 
 export const connectors = [
-  new SafeConnector({
-    chains: wagmiChains,
-    options: { debug: false },
-  }),
-  new InjectedConnectorNoDisconnectListener({ chains: wagmiChains }),
   new InjectedConnectorNoDisconnectListener({ chains: wagmiChains, options: { name: 'Browser Wallet' } }),
-  new WalletConnectConnector({
-    chains: wagmiChains,
-    options: {
-      projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID,
-      metadata: {
-        name: 'Revoke.cash',
-        description:
-          'Take back control of your wallet and stay safe by revoking token approvals and permissions you granted on Ethereum and over 60 other networks.',
-        url: 'https://revoke.cash',
-        icons: [
-          'https://revoke.cash/assets/images/revoke-icon.svg',
-          'https://revoke.cash/assets/images/apple-touch-icon.png',
-        ],
-      },
-    },
-  }),
-  new CoinbaseWalletConnector({ chains: wagmiChains, options: { appName: 'Revoke.cash' } }),
   new BloctoConnector({ chains: wagmiChains }),
-  new LedgerConnector({
-    chains: wagmiChains,
-    options: { walletConnectVersion: 2, projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID },
-  }),
 ];
 
 export const wagmiConfig = createConfig({
