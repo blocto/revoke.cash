@@ -17,7 +17,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const chainId = Number.parseInt(req.query.chainId as string, 10);
 
   try {
-    if (isCovalentSupportedChain(chainId)) {
+    if (isCovalentSupportedChain(chainId) && process.env.COVALENT_API_KEY) {
       const events = await covalentEventGetter.getEvents(chainId, req.body);
       return res.send(events);
     }
