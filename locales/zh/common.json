@@ -18,6 +18,7 @@
     "my_allowances": "我的授权",
     "report_exploit": "举报漏洞",
     "revoke": "撤销",
+    "batch_revoke": "批次撤销",
     "revoking": "正在撤销",
     "send": "发送",
     "sending": "发送给",
@@ -26,7 +27,9 @@
     "translate": "帮助我们翻译这个页面",
     "understand": "我理解",
     "update": "更新",
-    "updating": "更新中"
+    "updating": "更新中",
+    "select_all": "選擇所有",
+    "unselect_all": "取消選擇所有"
   },
   "chain_select": {
     "mainnets": "主网",

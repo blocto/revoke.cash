@@ -18,6 +18,7 @@
     "my_allowances": "My Approvals",
     "report_exploit": "Report Exploit",
     "revoke": "Revoke",
+    "batch_revoke": "Batch Revoke",
     "revoking": "Revoking",
     "send": "Send",
     "sending": "Sending",
@@ -26,7 +27,9 @@
     "translate": "Help Us Translate This Page",
     "understand": "I Understand",
     "update": "Update",
-    "updating": "Updating"
+    "updating": "Updating",
+    "select_all": "Select All",
+    "unselect_all": "Unselect All"
   },
   "chain_select": {
     "mainnets": "Mainnets",

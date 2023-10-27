@@ -27,6 +27,7 @@ export interface AllowanceData extends BaseTokenData {
   amount?: bigint; // Only for ERC20 tokens
   tokenId?: bigint; // Only for ERC721 tokens (single token)
   expiration?: number; // Only for Permit2 allowances
+  checked?: boolean;
 }
 
 export interface TokenFromList {
@@ -157,4 +158,5 @@ export interface TokenMetadata {
   price?: number;
 }
 
-export type OnUpdate = (allowance: AllowanceData, newAmount?: bigint) => void;
+export type OnUpdate = (allowance: AllowanceData, newAmount?: bigint, checked?: boolean) => void;
+export type OnCheck = (allowance: AllowanceData, checked: boolean) => void;

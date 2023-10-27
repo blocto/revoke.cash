@@ -1,5 +1,5 @@
 import { createColumnHelper, filterFns, Row, RowData, sortingFns } from '@tanstack/react-table';
-import { AllowanceData, OnUpdate } from 'lib/interfaces';
+import { AllowanceData, OnCheck, OnUpdate } from 'lib/interfaces';
 import { calculateValueAtRisk, isNullish } from 'lib/utils';
 import { formatErc20Allowance } from 'lib/utils/allowances';
 import { formatFixedPointBigInt } from 'lib/utils/formatting';
@@ -7,6 +7,7 @@ import { isErc721Contract } from 'lib/utils/tokens';
 import AllowanceCell from './cells/AllowanceCell';
 import AssetCell from './cells/AssetCell';
 import AssetTypeCell from './cells/AssetTypeCell';
+import CheckboxCell from './cells/CheckboxCell';
 import ControlsCell from './cells/ControlsCell';
 import HeaderCell from './cells/HeaderCell';
 import LastUpdatedCell from './cells/LastUpdatedCell';
@@ -16,6 +17,7 @@ import ValueAtRiskCell from './cells/ValueAtRiskCell';
 declare module '@tanstack/table-core' {
   interface TableMeta<TData extends RowData> {
     onUpdate: OnUpdate;
+    onCheck: OnCheck;
   }
 }
 
@@ -28,6 +30,7 @@ export enum ColumnId {
   SPENDER = 'Authorized Spender',
   LAST_UPDATED = 'Last Updated',
   ACTIONS = 'Actions',
+  BATCH_REVOKE = 'Batch Revoke',
 }
 
 export const accessors = {
@@ -175,5 +178,10 @@ export const columns = [
     id: ColumnId.ACTIONS,
     header: () => <HeaderCell i18nKey="address:headers.actions" align="right" />,
     cell: (info) => <ControlsCell allowance={info.row.original} onUpdate={info.table.options.meta.onUpdate} />,
+  }),
+  columnHelper.display({
+    id: ColumnId.BATCH_REVOKE,
+    header: () => <HeaderCell i18nKey="address:headers.batch_revoke" align="right" />,
+    cell: (info) => <CheckboxCell allowance={info.row.original} onCheck={info.table.options.meta.onCheck} />,
   }),
 ];

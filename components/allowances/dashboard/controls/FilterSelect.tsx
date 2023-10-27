@@ -77,7 +77,7 @@ const FilterSelect = ({ table }: Props) => {
   const displayOption = (option: Option, { selectValue }: FormatOptionLabelMeta<Option>) => {
     return (
       <div className="flex items-center gap-1">
-        <Checkbox checked={!!selectValue.find((selected) => selected.value === option.value)} />
+        <Checkbox disabled={false} checked={!!selectValue.find((selected) => selected.value === option.value)} />
         <span>{t(`address:filters.${normaliseLabel(option.group)}.options.${normaliseLabel(option.value)}`)}</span>
       </div>
     );

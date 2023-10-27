@@ -6,6 +6,7 @@ import {
   Abi,
   Address,
   ContractFunctionConfig,
+  EncodeFunctionDataParameters,
   FormattedTransactionRequest,
   GetValue,
   Hash,
@@ -14,6 +15,8 @@ import {
   TransactionNotFoundError,
   TransactionReceiptNotFoundError,
   WalletClient,
+  WriteContractReturnType,
+  encodeFunctionData,
   formatUnits,
   getAddress,
   pad,
@@ -136,6 +139,51 @@ export const writeContractUnlessExcessiveGas = async <
   const estimatedGas = await publicCLient.estimateContractGas(transactionRequest);
   throwIfExcessiveGas(transactionRequest.chain!.id, transactionRequest.address, estimatedGas);
   return walletClient.writeContract({ ...transactionRequest, gas: estimatedGas });
+};
+
+export const writeBatchContract = async <
+  TAbi extends Abi | readonly unknown[] = Abi,
+  TFunctionName extends string = string,
+>(
+  walletClient: WalletClient,
+  transactionRequests: ContractTransactionRequest<TAbi, TFunctionName>[],
+) => {
+  const params: { from: Address; to: Address; value: string; data: string }[] = [];
+  transactionRequests.forEach((transactionRequest) => {
+    const { abi, args, functionName } = transactionRequest as EncodeFunctionDataParameters<Abi, string>;
+    const data = encodeFunctionData({
+      abi,
+      args,
+      functionName,
+    });
+
+    params.push({
+      from: transactionRequest.account,
+      to: transactionRequest.address,
+      value: `0x${transactionRequest.value.toString(16)}`,
+      data: data,
+    });
+    transactionRequest.account;
+  });
+
+  console.log(
+    params.map((p) => {
+      return {
+        method: 'eth_sendTransaction',
+        params: p,
+      };
+    }),
+  );
+
+  return walletClient.request({
+    method: 'blocto_sendBatchTransaction',
+    params: params.map((p) => {
+      return {
+        method: 'eth_sendTransaction',
+        params: [p],
+      };
+    }),
+  }) as Promise<WriteContractReturnType>;
 };
 
 // This is as "simple" as I was able to get this generic to be, considering it needs to work with viem's type inference

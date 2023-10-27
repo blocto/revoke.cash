@@ -39,6 +39,7 @@
     "allowance": "Cantidad Autorizada",
     "asset": "Activo",
     "asset_type": "Tipo",
+    "batch_revoke": "Revocar lote",
     "last_updated": "Última Actualización",
     "spender": "Gastador Autorizado",
     "value_at_risk": "Valor en Riesgo"

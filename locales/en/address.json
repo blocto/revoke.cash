@@ -39,6 +39,7 @@
     "allowance": "Approved Amount",
     "asset": "Asset",
     "asset_type": "Type",
+    "batch_revoke": "Batch Revoke",
     "last_updated": "Last Updated",
     "spender": "Authorized Spender",
     "value_at_risk": "Value at Risk"

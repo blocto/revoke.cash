@@ -39,6 +39,7 @@
     "allowance": "授权金额",
     "asset": "资产",
     "asset_type": "类型",
+    "batch_revoke": "批次撤销",
     "last_updated": "上次更新",
     "spender": "已经授权的项目",
     "value_at_risk": "存在风险金额"

@@ -39,6 +39,7 @@
     "allowance": "Утв. сумма",
     "asset": "Aктив",
     "asset_type": "Тип",
+    "batch_revoke": "Пакетный отзыв",
     "last_updated": "Посл. обнов.",
     "spender": "Авториз. дост.",
     "value_at_risk": "Значение риска"

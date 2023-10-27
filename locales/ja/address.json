@@ -39,6 +39,7 @@
     "allowance": "許可したもの",
     "asset": "資産",
     "asset_type": "種類",
+    "batch_revoke": "バッチ取り消し",
     "last_updated": "最終更新日",
     "spender": "権限を持つ支出者",
     "value_at_risk": "リスクがある価値"

@@ -18,6 +18,7 @@
     "my_allowances": "Mis Autorizaciones",
     "report_exploit": "Informar de un Hack",
     "revoke": "Revocar",
+    "batch_revoke": "Revocar lote",
     "revoking": "Revocando",
     "send": "Enviar",
     "sending": "Enviando",
@@ -26,7 +27,9 @@
     "translate": "Ayúdanos a traducir esta página",
     "understand": "Entiendo",
     "update": "Actualizar",
-    "updating": "Actualizando"
+    "updating": "Actualizando",
+    "select_all": "Seleccionar todo",
+    "unselect_all": "Deselecciona todo"
   },
   "chain_select": {
     "mainnets": "Redes Principales",

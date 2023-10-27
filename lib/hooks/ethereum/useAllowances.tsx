@@ -84,5 +84,36 @@ export const useAllowances = (address: Address, events: AddressEvents, chainId: 
     });
   };
 
-  return { allowances, isLoading, error, onUpdate };
+  const onCheck = async (allowance: AllowanceData, checked: boolean) => {
+    setAllowances((previousAllowances) => {
+      return previousAllowances.map((other) => {
+        if (!allowanceEquals(other, allowance)) return other;
+
+        const newAllowance = { ...other, checked: checked };
+        return newAllowance;
+      });
+    });
+  };
+
+  const onSelectAll = async () => {
+    setAllowances((previousAllowances) => {
+      return previousAllowances.map((other) => {
+        if (!other.spender) return other;
+        const newAllowance = { ...other, checked: true };
+        return newAllowance;
+      });
+    });
+  };
+
+  const onUnselectAll = async () => {
+    setAllowances((previousAllowances) => {
+      return previousAllowances.map((other) => {
+        if (!other.spender) return other;
+        const newAllowance = { ...other, checked: false };
+        return newAllowance;
+      });
+    });
+  };
+
+  return { allowances, isLoading, error, onUpdate, onCheck, onSelectAll, onUnselectAll };
 };
