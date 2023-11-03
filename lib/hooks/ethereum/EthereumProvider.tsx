@@ -1,6 +1,7 @@
 import { BloctoConnector } from '@blocto/wagmi-connector';
 import { getViemChainConfig, SUPPORTED_CHAINS } from 'lib/utils/chains';
 import { SECOND } from 'lib/utils/time';
+import { useRouter } from 'next/router';
 import { ReactNode, useEffect } from 'react';
 import { configureChains, createConfig, useAccount, useConnect, WagmiConfig } from 'wagmi';
 import { InjectedConnector } from 'wagmi/connectors/injected';
@@ -45,6 +46,7 @@ export const EthereumProvider = ({ children }: Props) => {
 const EthereumProviderChild = ({ children }: Props) => {
   const { connect, connectors } = useConnect();
   const { connector } = useAccount();
+  const router = useRouter();
 
   // If the Safe connector is available, connect to it even if other connectors are available
   // (if another connector auto-connects (or user disconnects), we still override it with the Safe connector)
@@ -52,6 +54,20 @@ const EthereumProviderChild = ({ children }: Props) => {
     const safeConnector = connectors?.find((connector) => connector.id === 'safe' && connector.ready);
     if (!safeConnector || connector === safeConnector) return;
     connect({ connector: safeConnector });
+  }, [connectors, connector]);
+
+  useEffect(() => {
+    const injectedConnector = connectors?.find((connector) => connector.id === 'injected' && connector.ready);
+    if (!injectedConnector || connector === injectedConnector) return;
+    const enterIfBlocto = async () => {
+      const provider = await injectedConnector.getProvider();
+      if (provider.isBlocto) {
+        connect({ connector: injectedConnector });
+        const address = await injectedConnector.getAccount();
+        router.push(`/address/${address}`);
+      }
+    };
+    enterIfBlocto();
   }, [connectors, connector]);
 
   return <>{children}</>;
