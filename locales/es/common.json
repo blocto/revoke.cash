@@ -19,6 +19,7 @@
     "report_exploit": "Informar de un Hack",
     "revoke": "Revocar",
     "batch_revoke": "Revocar lote",
+    "one_click_revoke": "Revocar todo con un clic",
     "revoking": "Revocando",
     "send": "Enviar",
     "sending": "Enviando",

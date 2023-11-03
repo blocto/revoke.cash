@@ -4,6 +4,7 @@ import { useAddressAllowances, useAddressPageContext } from 'lib/hooks/page-cont
 import type { AllowanceData } from 'lib/interfaces';
 import AllowanceTableControls from './controls/AllowanceTableControls';
 import BatchRevokeControls from './controls/BatchRevokeControls';
+import OneClickBatchRevokeControls from './controls/OneClickBatchRevokeControls';
 import AllowanceTable from './table/AllowanceTable';
 import WalletHealthSection from './wallet-health/WalletHealthSection';
 
@@ -32,6 +33,12 @@ const AllowanceDashboard = () => {
   return (
     <div className="flex flex-col justify-start mx-auto gap-2">
       <WalletHealthSection address={address} chainId={selectedChainId} />
+      <OneClickBatchRevokeControls
+        address={address}
+        chainId={selectedChainId}
+        allowances={allowances}
+        onUpdate={onUpdate}
+      />
       <AllowanceTableControls table={table} />
       <BatchRevokeControls
         address={address}

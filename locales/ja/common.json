@@ -19,6 +19,7 @@
     "report_exploit": "エクスプロイトを報告する",
     "revoke": "取り消す",
     "batch_revoke": "バッチ取り消し",
+    "one_click_revoke": "ワンクリックですべてを取り消す",
     "revoking": "取り消中",
     "send": "送信する",
     "sending": "送信中",

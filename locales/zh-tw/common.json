@@ -19,6 +19,7 @@
     "report_exploit": "舉報漏洞",
     "revoke": "撤銷",
     "batch_revoke": "批次撤銷",
+    "one_click_revoke": "一鍵全部撤銷",
     "revoking": "正在撤銷",
     "send": "發送",
     "sending": "發送給",

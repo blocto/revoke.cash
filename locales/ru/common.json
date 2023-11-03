@@ -19,6 +19,7 @@
     "report_exploit": "Сообщить об эксплойте",
     "revoke": "Отозвать",
     "batch_revoke": "Пакетный отзыв",
+    "one_click_revoke": "Отозвать все в один клик",
     "revoking": "Отмена",
     "send": "Отправить",
     "sending": "Отправка…",

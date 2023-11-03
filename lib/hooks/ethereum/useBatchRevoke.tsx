@@ -8,8 +8,12 @@ import { isErc721Contract } from 'lib/utils/tokens';
 import { usePublicClient, useWalletClient } from 'wagmi';
 import { useHandleTransaction } from './useHandleTransaction';
 
-export const useBatchRevoke = (allowances: AllowanceData[], onUpdate: OnUpdate = () => {}) => {
-  allowances = allowances?.filter((a) => a.spender && a.checked == true);
+export const useBatchRevoke = (
+  allowances: AllowanceData[],
+  onUpdate: OnUpdate = () => {},
+  onlyForChecked: boolean = true,
+) => {
+  allowances = allowances?.filter((a) => a.spender && (!onlyForChecked || a.checked == true));
 
   const { data: walletClient } = useWalletClient();
   const publicClient = usePublicClient();
