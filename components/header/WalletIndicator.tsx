@@ -18,9 +18,14 @@ const WalletIndicator = ({ menuAlign, size, style, className, pageAddress }: Pro
   const isMounted = useMounted();
   const { address: account } = useAccount();
   const { switchNetwork } = useSwitchNetwork({
-    onSuccess: () => {
+    onSuccess: (data) => {
       if (account && pageAddress && account != pageAddress) {
-        router.push(`/address/${account}`);
+        router.push({
+          pathname: `/address/${account}`,
+          query: {
+            chainId: data.id,
+          },
+        });
       }
     },
   });

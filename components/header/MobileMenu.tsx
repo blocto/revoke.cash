@@ -5,10 +5,15 @@ import WalletIndicator from 'components/header/WalletIndicator';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
 import { Fragment, useEffect, useRef, useState } from 'react';
+import { Address } from 'viem';
 import DonateButton from '../common/DonateButton';
 import NavLink from './NavLink';
 
-const MobileMenu = () => {
+interface Props {
+  pageAddress?: Address;
+}
+
+const MobileMenu = ({ pageAddress }: Props) => {
   const router = useRouter();
   const { t } = useTranslation();
   const focusRef = useRef(null);
@@ -41,7 +46,13 @@ const MobileMenu = () => {
             <Dialog.Panel className="z-10 overflow-y-auto bg-white dark:bg-black w-screen h-screen">
               <div className="flex flex-col items-center gap-6 p-12">
                 <button ref={focusRef} /> {/* Focus trap */}
-                <WalletIndicator menuAlign="right" size="none" style="tertiary" className="text-lg" />
+                <WalletIndicator
+                  menuAlign="right"
+                  size="none"
+                  style="tertiary"
+                  className="text-lg"
+                  pageAddress={pageAddress}
+                />
                 <DonateButton size="none" style="tertiary" className="text-lg" />
                 <NavLink to="/extension" text={t('common:nav.extension')} />
                 <NavLink to="/exploits" text={t('common:nav.exploits')} />

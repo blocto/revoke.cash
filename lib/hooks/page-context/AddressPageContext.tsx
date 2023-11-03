@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React, { ReactNode, useContext, useEffect, useState } from 'react';
 import useLocalStorage from 'use-local-storage';
 import { Address } from 'viem';
-import { useNetwork } from 'wagmi';
+import { useAccount, useNetwork, useSwitchNetwork } from 'wagmi';
 import { useEvents } from '../ethereum/events/useEvents';
 import { useAllowances } from '../ethereum/useAllowances';
 
@@ -28,6 +28,8 @@ const AddressPageContext = React.createContext<AddressContext>({});
 export const AddressPageContextProvider = ({ children, address, initialChainId }: Props) => {
   const router = useRouter();
   const { chain } = useNetwork();
+  const { switchNetworkAsync } = useSwitchNetwork();
+  const { address: account, connector } = useAccount();
 
   // The default selected chain ID is either the chainId query parameter, the connected chain ID, or 1 (Ethereum)
   const queryChainId = parseInt(router.query.chainId as string);
@@ -37,6 +39,8 @@ export const AddressPageContextProvider = ({ children, address, initialChainId }
   useEffect(() => {
     if (!router.query.chainId) {
       router.replace({ query: { ...router.query, chainId: selectedChainId } });
+    } else if (queryChainId != selectedChainId) {
+      selectChain(queryChainId);
     }
   }, [router.query.chainId]);
 
@@ -45,6 +49,31 @@ export const AddressPageContextProvider = ({ children, address, initialChainId }
       router.replace({ query: { ...router.query, chainId: selectedChainId } });
     }
   }, [selectedChainId]);
+
+  const onSelectChain = async (chainId: number) => {
+    var replace = false;
+    if (connector) {
+      const provider = await connector.getProvider();
+      if (provider.isBlocto) {
+        await switchNetworkAsync(chainId);
+        if (account == address) {
+          const newAccount = await connector.getAccount();
+          if (newAccount != address) {
+            replace = true;
+            router.replace({
+              pathname: `/address/${newAccount}`,
+              query: {
+                chainId: chainId,
+              },
+            });
+          }
+        }
+      }
+    }
+    if (!replace) {
+      selectChain(chainId);
+    }
+  };
 
   const eventContext = useEvents(address, selectedChainId);
   const allowanceContext = useAllowances(address, eventContext?.events, selectedChainId);
@@ -59,7 +88,7 @@ export const AddressPageContextProvider = ({ children, address, initialChainId }
       value={{
         address,
         selectedChainId,
-        selectChain,
+        selectChain: onSelectChain,
         eventContext,
         allowanceContext,
         signatureNoticeAcknowledged,

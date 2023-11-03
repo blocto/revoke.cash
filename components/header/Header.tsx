@@ -43,7 +43,7 @@ const Header = ({ pageAddress, searchBar = true }: Props) => {
           <WalletIndicator pageAddress={pageAddress} />
         </div>
         <div className="flex lg:hidden justify-end">
-          <MobileMenu />
+          <MobileMenu pageAddress={pageAddress} />
         </div>
       </div>
       {searchBar && (
