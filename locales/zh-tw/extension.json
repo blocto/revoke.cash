@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "description": "如果出現可能不利加密錢包安全的行為，將收到警告，從而保護以太坊資金安全。",
+    "title": "Revoke.cash 瀏覽器擴展"
+  },
+  "paragraph_1": "釣魚網站有時會假裝是要你鑄造NFT或其他正當操作來騙取授權。當這些網絡釣魚騙局發生時，建議使用Revoke.cash來減輕損失，但最好還是預防此類騙局的發生。",
+  "paragraph_2": "這就是Revoke.cash瀏覽器擴展的用處。每當你要簽署一項許可時，該擴展就會彈出，並會告知你許可的細節。這可以幫助你防止簽署惡意的許可。",
+  "paragraph_3": "當你準備在OpenSea和LooksRare等主流市場上掛出作品進行銷售，或者當你準備簽署哈希時，Revoke.cash也會通知你。這些哈希值被X2Y2等市場用於列出NFTs。",
+  "paragraph_4": "一種釣魚網站常見的騙局是誘騙你簽名無GAS限制的交易，以便騙子盜取你的NFT。OpenSea、LooksRare、X2Y2、Uniswap和Blur的官方網站屬於白名單，允許進行這些操作，因此Revoke.cash瀏覽器擴展不會幹擾你的正常交易行為。",
+  "paragraph_5": "不同類別的警告可在擴展設置中打開或關閉。",
+  "paragraph_6": "Revoke.cash 瀏覽器擴展適用於所有基於 EVM 的鏈，如 Ethereum、Polygon 和 Avalanche。",
+  "title": "Revoke.cash 瀏覽器擴展"
+}

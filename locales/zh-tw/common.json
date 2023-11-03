@@ -1,0 +1,106 @@
+{
+  "buttons": {
+    "back_to_exploits": "返回漏洞",
+    "cancel": "取消",
+    "cancel_signatures": "取消簽名",
+    "cancelling": "正在取消",
+    "check": "檢查",
+    "check_connected_address": "檢查連接地址",
+    "clear_filters": "清除篩選條件",
+    "connect": "連接錢包",
+    "connecting": "正在連接",
+    "disconnect": "斷開連接",
+    "disconnecting": "正在斷開連接",
+    "donate": "捐贈",
+    "donating": "正在捐贈",
+    "download": "下載",
+    "get_started": "開始使用",
+    "my_allowances": "我的授權",
+    "report_exploit": "舉報漏洞",
+    "revoke": "撤銷",
+    "batch_revoke": "批次撤銷",
+    "revoking": "正在撤銷",
+    "send": "發送",
+    "sending": "發送給",
+    "switch_chain": "切換區塊鏈",
+    "switching": "切換中",
+    "translate": "幫助我們翻譯這個頁面",
+    "understand": "我理解",
+    "update": "更新",
+    "updating": "更新中",
+    "select_all": "選擇所有",
+    "unselect_all": "取消選擇所有"
+  },
+  "chain_select": {
+    "mainnets": "主網",
+    "testnets": "測試網"
+  },
+  "color_themes": {
+    "dark": "暗色",
+    "light": "明亮",
+    "system": "系統"
+  },
+  "connect_wallet": {
+    "title": "連接錢包"
+  },
+  "donate": {
+    "gitcoin_grants": "或者為我們的<0>Gitcoin Grant</0>捐款",
+    "title": "為Revoke.cash捐款"
+  },
+  "errors": {
+    "404": {
+      "go_home": "返回主頁",
+      "subtitle": "找不到頁面。",
+      "suggested_pages": {
+        "extension": {
+          "description": "下載Revoke.cash瀏覽器擴展程序。",
+          "title": "擴展"
+        },
+        "faq": {
+          "description": "回答你所有的問題。",
+          "title": "常見問題"
+        },
+        "title": "你在找其中一個嗎？",
+        "your_allowances": {
+          "description": "檢查你的授權。",
+          "title": "你的授權"
+        }
+      },
+      "title": "此頁面不存在。"
+    },
+    "messages": {
+      "chain_could_not_connect": "無法鏈接到{{chainName}}"
+    }
+  },
+  "footer": {
+    "privacy": "隱私",
+    "sponsors": "讚助商：",
+    "terms": "條款"
+  },
+  "meta": {
+    "description": "撤銷在以太坊等 60+ 區塊鏈上的代幣授權，重新掌控自己的錢包，確保資金安全。",
+    "title": "撤銷 60+ 區塊鏈上的代幣授權"
+  },
+  "misc": {
+    "powered_by": "由<0>{{name}}</0>提供技術支持"
+  },
+  "nav": {
+    "about": "關於我們",
+    "exploits": "漏洞",
+    "extension": "擴展",
+    "faq": "常見問題",
+    "learn": "學習資源",
+    "more": "更多",
+    "search": "通過輸入地址或域名來搜尋賬戶"
+  },
+  "toasts": {
+    "clipboard_failed": "❌ 無法覆制到剪貼板",
+    "clipboard_success": "✅ 已覆制到剪貼板",
+    "donation_sent": "💪 感謝捐贈！",
+    "revoke_failed": "❌ 撤銷授權許可失敗：{{message}}",
+    "revoke_failed_revert": "❌ 撤銷授權失敗：{{message}}。請聯系該代幣團隊來解決這個問題。",
+    "transaction_failed": "交易失敗{{message}}",
+    "transaction_submitted": "✅ 交易已提交！",
+    "update_failed": "❌ 此代幣不支持更新授權，請改為撤銷。"
+  }
+}

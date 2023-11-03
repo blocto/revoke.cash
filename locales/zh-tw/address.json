@@ -1,0 +1,128 @@
+{
+  "allowances": {
+    "amount": "{{amount}} {{symbol}}",
+    "none": "沒有授權",
+    "none_found": "沒有授權",
+    "none_found_filtered": "所選過濾條件下未找到授權",
+    "token_id": "代幣 #{{tokenId}}",
+    "unknown": "未知",
+    "unlimited": "無限"
+  },
+  "filters": {
+    "allowances": {
+      "label": "授權金額",
+      "options": {
+        "limited": "有限的",
+        "none": "沒有",
+        "unlimited": "無限"
+      }
+    },
+    "asset_balance": {
+      "label": "資產余額",
+      "options": {
+        "non_zero": "非零",
+        "zero": "零"
+      }
+    },
+    "asset_type": {
+      "label": "資產類型",
+      "options": {
+        "nft": "NFT",
+        "token": "代幣"
+      }
+    },
+    "label": "篩選",
+    "showing_everything": "顯示一切"
+  },
+  "headers": {
+    "actions": "操作",
+    "allowance": "授權金額",
+    "asset": "資產",
+    "asset_type": "類型",
+    "batch_revoke": "批次撤銷",
+    "last_updated": "上次更新",
+    "spender": "已經授權的項目",
+    "value_at_risk": "存在風險金額"
+  },
+  "labels": {
+    "connected": "已連接",
+    "nft": "NFT",
+    "not_connected": "未連接",
+    "token": "代幣"
+  },
+  "meta": {
+    "title": "地址 {{addressDisplay}} 授權情況",
+    "title_chain": "地址{{addressDisplay}}在{{chainName}}上的批準情況"
+  },
+  "navigation": {
+    "allowances": "授權",
+    "history": "歷史",
+    "more": "更多",
+    "settings": "設置",
+    "signatures": "簽名"
+  },
+  "permit2": {
+    "expiration": "於 {{inTime}} 過期"
+  },
+  "search": {
+    "spender": "按授權的花費地址搜尋"
+  },
+  "signatures": {
+    "info": {
+      "description": "由於區塊鏈不存儲簽名，因此 Revoke.cash 無法核實您是否真的進行了簽名。此頁面包含了<0>可能的</0>簽名列表。<1>只有當您確定自己在釣魚網站上進行了簽名時，才需要取消這些簽名</1>。即使您已取消簽名，該條目仍將保存在本列表中。"
+    },
+    "marketplaces": {
+      "none_found": "未找到該鏈的市場。",
+      "title": "市場簽名"
+    },
+    "permit": {
+      "none_found": "未找到支持許可的代幣。",
+      "title": "允許簽名"
+    }
+  },
+  "sorting": {
+    "columns": {
+      "allowance": "授權金額",
+      "asset_name": "資產名稱",
+      "authorized_spender": "已經授權的項目",
+      "last_updated": "上次更新",
+      "value_at_risk": "存在風險金額"
+    },
+    "fns": {
+      "date": {
+        "asc": "從舊到新",
+        "desc": "從新到舊"
+      },
+      "number": {
+        "asc": "從低到高",
+        "desc": "從高到低"
+      },
+      "text": {
+        "asc": "A 到 Z",
+        "desc": "Z 到 A"
+      }
+    },
+    "label": "排序"
+  },
+  "tooltips": {
+    "acknowledge_signature_notice": "檢查簽名前，請確認該通知。",
+    "connect_wallet": "請連接錢包繼續下一步",
+    "connected_account": "您只能操作已連接的賬戶",
+    "involved_in_exploits": "此地址涉及以下漏洞：",
+    "marketplace_listings": "這將取消 {{marketplace}} 上的所有當前列出的產品和報價。",
+    "marketplace_signatures": "一旦獲得批準，市場可以代表您轉移資產。騙子可利用這些批準在第三方網站上創建零價格列表。如果您在釣魚網站上簽署了簽名，請盡快取消。",
+    "permit2_expiration": "這是 Permit2 授權，將於 {{inTime}} 到期。",
+    "permit_signatures": "許可簽名用於在無需發送交易的情況下批準花費。如果您在釣魚網站上簽署了許可簽名，請取消。",
+    "switch_chain": "請在錢包內將區塊鏈切換為 <0>{{chainName}}</0> 以繼續操作"
+  },
+  "wallet_health": {
+    "categories": {
+      "high": "良好",
+      "low": "較差",
+      "medium": "一般"
+    },
+    "description": "錢包健康",
+    "total_allowances": "全部授權",
+    "total_value_at_risk": "全部存在風險金額"
+  }
+}

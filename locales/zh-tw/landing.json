@@ -1,0 +1,49 @@
+{
+  "faq": {
+    "subtitle": "這些是用戶的常見問題。如需查看完整列表，請訪問我們的<0>常見問題頁面</0>。",
+    "title": "常見問題"
+  },
+  "hero_section": {
+    "paragraph_1": "使用 Uniswap 或 OpenSea 等去中心化應用程序，你必須授予它們花費代幣和 NFT的權限。這被稱為授權。如果你不撤銷這些授權，dapp可以隨時花費你的代幣。通過撤銷授權來奪回控制權吧。",
+    "title": "掌控自己的錢包。"
+  },
+  "how_to": {
+    "paragraph_1": {
+      "description": "點擊右上角的 <0>連接錢包</0> 或在搜尋欄中輸入地址。",
+      "title": "1。連接"
+    },
+    "paragraph_2": {
+      "description": "使用區塊鏈選擇、排序和篩選選項檢查你的代幣授權。",
+      "title": "2。檢查"
+    },
+    "paragraph_3": {
+      "description": "通過撤銷不再使用的代幣授權，以防不必要地資金使用權限。",
+      "title": "3。撤銷"
+    },
+    "title": "如何撤銷授權。"
+  },
+  "sponsors": {
+    "description": "Revoke.cash的長期開發依賴於讚助和捐贈。目前為止，我們的讚助者包括以下人員和組織。如果你想和他們一起讚助 Revoke.cash，請查看我們的<0>讚助頁面</0>。",
+    "tiers": {
+      "bronze": "青銅讚助",
+      "gold": "金牌讚助",
+      "silver": "銀牌讚助商"
+    },
+    "title": "讚助商"
+  },
+  "why_revoke": {
+    "paragraph_1": {
+      "description": "如果你不常使用某個dapp時，限制授權總是件好事，尤其是對於 NFT 市場而言。這降低了因黑客攻擊或漏洞利用而導致資金損失的風險，還可以預防網絡釣魚詐騙。",
+      "title": "1。定期使用Revoke.cash。"
+    },
+    "paragraph_2": {
+      "description": "詐騙者經常試圖欺騙你授權它們花費許可。你可按照最新授權排序，找出風險所在，然後撤銷授權以防止更多損失。不幸的是，我們無法<0>追</0>回已經被盜的資金。",
+      "title": "2。被騙後使用Revoke.cash。"
+    },
+    "paragraph_3": {
+      "description": "預防勝於事後後悔。當你授權可能有風險的操作時，Revoke.cash 瀏覽器擴展程序會向你發出警告。這可以幫助防止因網絡釣魚詐騙而損失資金。",
+      "title": "3。使用Revoke.cash 瀏覽器擴展程序。"
+    },
+    "title": "為什麼要使用Revoke.cash。"
+  }
+}

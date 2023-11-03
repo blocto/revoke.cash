@@ -1,4 +1,3 @@
-import Logo from 'components/common/Logo';
 import Select from 'components/common/Select';
 import { useColorTheme } from 'lib/hooks/useColorTheme';
 import { track } from 'lib/utils/analytics';
@@ -18,7 +17,8 @@ const LanguageSelect = () => {
 
   const options: Option[] = [
     { value: 'en', name: 'English' },
-    { value: 'zh', name: '中文' },
+    { value: 'zh-tw', name: '繁體中文' },
+    { value: 'zh', name: '簡體中文' },
     { value: 'ru', name: 'Русский' },
     { value: 'ja', name: '日本語' },
     { value: 'es', name: 'Español' },
@@ -40,10 +40,8 @@ const LanguageSelect = () => {
 
   const displayOption = (option: Option, { context }: FormatOptionLabelMeta<Option>) => {
     // Flag images are from https://github.com/lipis/flag-icons/tree/main/flags/1x1
-    const src = `/assets/images/flags/${option.value}.svg`;
     return (
       <div className="flex gap-1 items-center">
-        <Logo src={src} alt={option.name} size={16} border className={context === 'value' ? 'border-white' : ''} />
         <div>{option.name}</div>
       </div>
     );
